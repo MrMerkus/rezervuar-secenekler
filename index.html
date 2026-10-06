@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gömme Rezervuar Ustası — iki seçenek</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+:root{--zemin:#eceae4;--kart:#fff;--metin:#1d1f22;--soluk:#62656b;--cizgi:#c9c6bd}
+@media (prefers-color-scheme:dark){:root{--zemin:#16181b;--kart:#1f2226;--metin:#eceae4;--soluk:#9a9ea5;--cizgi:#34383e}}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:var(--zemin);color:var(--metin);font:15px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;display:flex;flex-direction:column}
+header{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;padding:12px 16px;border-bottom:1px solid var(--cizgi);background:var(--kart)}
+h1{font-size:16px;margin:0;font-weight:650}
+.grup{display:flex;border:1px solid var(--metin);border-radius:3px;overflow:hidden}
+.grup button{font:inherit;font-size:13px;background:none;border:0;padding:6px 12px;cursor:pointer;color:var(--metin)}
+.grup button+button{border-left:1px solid var(--metin)}
+.grup button[aria-pressed=true]{background:var(--metin);color:var(--kart)}
+.ipucu{color:var(--soluk);font-size:13px;margin-left:auto}
+main{flex:1;min-height:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:12px}
+.secenek{display:flex;flex-direction:column;min-width:0;min-height:0;background:var(--kart);border:1px solid var(--cizgi)}
+.baslik{display:flex;align-items:baseline;gap:8px;padding:8px 10px;border-bottom:1px solid var(--cizgi)}
+.baslik b{font-size:14px}
+.baslik span{color:var(--soluk);font-size:12px;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.baslik a{font-size:12px;color:var(--metin)}
+.sahne{flex:1;min-height:0;overflow:hidden;position:relative;display:flex;justify-content:center;background:var(--zemin)}
+.sahne iframe{border:0;background:#fff;transform-origin:top center;position:absolute;top:0}
+@media (max-width:760px){
+  main{grid-template-columns:1fr;grid-auto-rows:80vh;overflow:auto}
+  .ipucu{display:none}
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Gömme Rezervuar Ustası · iki seçenek</h1>
+  <div class="grup" role="group" aria-label="Ekran">
+    <button data-ekran="1280" aria-pressed="true">Masaüstü</button>
+    <button data-ekran="390" aria-pressed="false">Mobil</button>
+  </div>
+  <span class="ipucu">Her kutunun içinde kaydırabilirsin.</span>
+</header>
+<main>
+  <section class="secenek">
+    <div class="baslik"><b>A · Röntgen</b><span>duvarın içini büyüteçle gösterir, sıcak ve oyunlu</span><a href="a/" target="_blank" rel="noopener">yeni sekmede aç ↗</a></div>
+    <div class="sahne"><iframe src="a/" title="Seçenek A"></iframe></div>
+  </section>
+  <section class="secenek">
+    <div class="baslik"><b>B · Teknik şema</b><span>tıklanır rezervuar kesiti, sifonu çek</span><a href="b/" target="_blank" rel="noopener">yeni sekmede aç ↗</a></div>
+    <div class="sahne"><iframe src="b/" title="Seçenek B"></iframe></div>
+  </section>
+</main>
+<script>
+let ekran = 1280;
+// iframe gerçek ekran genişliğinde çizilir, kutuya sığacak kadar küçültülür
+function olcekle(){
+  document.querySelectorAll('.sahne').forEach(sahne => {
+    const f = sahne.querySelector('iframe');
+    const k = Math.min(1, sahne.clientWidth / ekran);
+    f.style.width = ekran + 'px';
+    f.style.height = (sahne.clientHeight / k) + 'px';
+    f.style.transform = `scale(${k})`;
+  });
+}
+document.querySelectorAll('[data-ekran]').forEach(b => b.onclick = () => {
+  ekran = +b.dataset.ekran;
+  document.querySelectorAll('[data-ekran]').forEach(x => x.setAttribute('aria-pressed', x === b));
+  olcekle();
+});
+addEventListener('resize', olcekle);
+olcekle();
+</script>
+</body>
+</html>
