@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gömme Rezervuar Ustası — iki seçenek</title>
+<title>Gömme Rezervuar Ustası — dört seçenek</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="darkreader-lock">
 <style>
@@ -19,7 +19,7 @@ h1{font-size:16px;margin:0;font-weight:650}
 .grup button+button{border-left:1px solid var(--metin)}
 .grup button[aria-pressed=true]{background:var(--metin);color:var(--kart)}
 .ipucu{color:var(--soluk);font-size:13px;margin-left:auto}
-main{flex:1;min-height:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:12px}
+main{flex:1;min-height:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:82vh;overflow:auto;gap:12px;padding:12px}
 .secenek{display:flex;flex-direction:column;min-width:0;min-height:0;background:var(--kart);border:1px solid var(--cizgi)}
 .baslik{display:flex;align-items:baseline;gap:8px;padding:8px 10px;border-bottom:1px solid var(--cizgi)}
 .baslik b{font-size:14px}
@@ -35,7 +35,7 @@ main{flex:1;min-height:0;display:grid;grid-template-columns:repeat(2,minmax(0,1f
 </head>
 <body>
 <header>
-  <h1>Gömme Rezervuar Ustası · iki seçenek</h1>
+  <h1>Gömme Rezervuar Ustası · dört seçenek</h1>
   <div class="grup" role="group" aria-label="Ekran">
     <button data-ekran="1280" aria-pressed="true">Masaüstü</button>
     <button data-ekran="390" aria-pressed="false">Mobil</button>
@@ -50,6 +50,14 @@ main{flex:1;min-height:0;display:grid;grid-template-columns:repeat(2,minmax(0,1f
   <section class="secenek">
     <div class="baslik"><b>B · Teknik şema</b><span>tıklanır rezervuar kesiti, sifonu çek</span><a href="b/index.html" target="_blank" rel="noopener">yeni sekmede aç ↗</a></div>
     <div class="sahne"><iframe src="b/index.html" title="Seçenek B"></iframe></div>
+  </section>
+  <section class="secenek">
+    <div class="baslik"><b>C · Röntgen, fotoğraflı</b><span>A + fotoğraf, krem ve bakır</span><a href="c/index.html" target="_blank" rel="noopener">yeni sekmede aç ↗</a></div>
+    <div class="sahne"><iframe src="c/index.html" title="Seçenek C"></iframe></div>
+  </section>
+  <section class="secenek">
+    <div class="baslik"><b>D · Şema, fotoğraflı</b><span>B + sahadan fotoğraflar, turuncu vurgu</span><a href="d/index.html" target="_blank" rel="noopener">yeni sekmede aç ↗</a></div>
+    <div class="sahne"><iframe src="d/index.html" title="Seçenek D"></iframe></div>
   </section>
 </main>
 <script>
