@@ -210,6 +210,9 @@ nav.links a:hover{color:var(--ink)}
 .sec-row{display:grid;grid-template-columns:1fr 220px;gap:clamp(20px,4vw,48px);align-items:end;margin-bottom:36px}
 .sec-row .sec-head{margin-bottom:0}
 .foto-hands img{aspect-ratio:2/3}
+.foto-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:760px;margin-inline:auto}
+.foto-pair img{aspect-ratio:4/5}
+@media (max-width:700px){.foto-pair{gap:10px}.foto-pair figcaption{font-size:13px}}
 @media (max-width:700px){.foto-wide img{aspect-ratio:16/9}}
 .paper{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:30px 30px 24px;transform:rotate(-1.2deg);box-shadow:0 20px 40px -24px color-mix(in srgb,var(--ink) 50%,transparent);background-image:repeating-linear-gradient(to bottom,transparent 0 37px,var(--line) 37px 38px);position:relative}
 .paper::before{content:"";position:absolute;top:-12px;left:50%;width:90px;height:26px;transform:translateX(-50%) rotate(2deg);background:color-mix(in srgb,var(--water) 25%,transparent);border-radius:3px}
@@ -433,7 +436,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       </div>
       <div class="brands">
         <span class="hand">baktığımız markalar:</span>
-        <span class="b">Geberit</span><span class="b">Grohe</span><span class="b">VitrA</span><span class="b">Creavit</span><span class="b">TECE</span><span class="b">Siamp</span><span class="b">Wisa</span><span class="b">Ideal Standard</span>
+        <span class="b">VitrA</span><span class="b">Kale</span><span class="b">Siamp</span><span class="b">Serel</span><span class="b">Creavit</span><span class="b">Japar</span><span class="b">Geberit</span><span class="b">Grohe</span><span class="b">TECE</span><span class="b">Wisa</span><span class="b">Ideal Standard</span>
       </div>
     </div>
   </section>
@@ -475,6 +478,19 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
         <li><h3>Kapaktan onarım</h3><p>Fiyatı başlamadan söyleriz, onayınızla işe girişiriz.</p></li>
         <li><h3>Test ve garanti</h3><p>Birkaç kez sifon çekip sızıntı kontrolü yaparız.</p></li>
       </ol>
+    </div>
+  </section>
+
+  <section class="foto-pair-sec" style="padding-top:0">
+    <div class="wrap foto-pair">
+      <figure class="foto">
+        <img src="../foto/tesisat-vana.jpg" width="683" height="1024" loading="lazy" decoding="async" alt="Duvar içinde kırmızı vanalı bakır su tesisatı">
+        <figcaption>Duvarın arkası: tesisat ve vanalar.</figcaption>
+      </figure>
+      <figure class="foto">
+        <img src="../foto/banyo-asma-klozet.jpg" width="960" height="1438" loading="lazy" decoding="async" alt="Asma klozet ve gömme rezervuar kumanda plakası olan modern banyo">
+        <figcaption>İş bitince: temiz duvar, sessiz rezervuar.</figcaption>
+      </figure>
     </div>
   </section>
 
